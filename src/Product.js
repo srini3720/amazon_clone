@@ -5,7 +5,7 @@ function Product() {
     return (
         <div className='product'>
             <div className="product__info">
-                <p>info</p>
+                <p>The intelligent investor</p>
                 <p className='product__price'>
                     <small>₹</small>
                     <strong>599</strong>
