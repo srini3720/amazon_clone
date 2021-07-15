@@ -6,6 +6,8 @@ import CheckoutProduct from './CheckoutProduct';
 
 
 
+
+
 function Checkout() {
     const [{basket, user}, dispatch] =useStateValue();
     return (
@@ -16,9 +18,9 @@ function Checkout() {
                    alt=''
                   />
                    <div>
-                       <h3>
-                           Hello ,
-                           {user?.email}
+                       <h3 style={{textTransform: 'capitalize'}}>
+                           Hello , 
+                            { user?.email.replace(/@.*$/,"")}
                        </h3>
                            <h2 className="checkout__title">
                              Your Shopping Basket
