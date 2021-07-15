@@ -34,9 +34,9 @@ function Product({ id, title, image, price, rating }) {
               <p>⭐</p>
             ))}
         </div>
+      <button onClick={addToBasket}>Add to cart</button>
       </div>
 
-      <button onClick={addToBasket}>Add to cart</button>
     </div>
   );
 }
