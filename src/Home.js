@@ -23,7 +23,7 @@ function Home() {
         />
         <Product
           id="51694526"
-          title="Harry Potter "
+          title="The Harry Potter "
           price={299}
           image="https://images-na.ssl-images-amazon.com/images/I/51ifu1aebKL._SX332_BO1,204,203,200_.jpg"
           rating={4}
