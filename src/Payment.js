@@ -162,7 +162,7 @@ function Payment() {
                   <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
                 </button> */}
                 <button disabled={processing || disabled || succeeded}>
-                  <span>{processing ? <p>Under Construction (Backend Not Hoisted)</p> : "Buy Now"}</span>
+                  <span>{processing ? <p>Under Construction (Backend Not Hosted)</p> : "Buy Now"}</span>
                 </button>
               </div>
               {error && <div>{error}</div>}
