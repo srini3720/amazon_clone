@@ -6,7 +6,7 @@ import { Link, useHistory } from "react-router-dom";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import CurrencyFormat from "react-currency-format";
 import { getBasketTotal } from "./reducer";
-import axios from "./axios.js"
+import axios from "./axios.js";
 
 function Payment() {
   const [{ basket, user }, dispatch] = useStateValue();
@@ -17,7 +17,7 @@ function Payment() {
   const [error, setError] = useState(null);
   const [disabled, setDisabled] = useState(true);
   const [succeeded, setSucceeded] = useState(false);
-  const [processing, setProcessing] = useState('');
+  const [processing, setProcessing] = useState("");
   const [clientSecret, setClientSecret] = useState(true);
 
   useEffect(() => {
@@ -27,13 +27,13 @@ function Payment() {
         method: "post",
         //stripe expects the total in a currency subunits
         url: `/payments/create?total=${getBasketTotal(basket) * 100}`,
-        
+        description: "product",
       });
       setClientSecret(response.data.clientSecret);
     };
     getClientSecret();
   }, [basket]);
-  console.log("THE SECRET IS >>>>",clientSecret)
+  console.log("THE SECRET IS >>>>", clientSecret);
 
   const handleSubmit = async (event) => {
     //stripe
@@ -142,7 +142,7 @@ function Payment() {
                   value={getBasketTotal(basket)}
                   displayType={"text"}
                   thousandSeparator={true}
-                  prefix={"$"}
+                  prefix={"₹ "}
                 />
                 <button disabled={processing || disabled || succeeded}>
                   <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
