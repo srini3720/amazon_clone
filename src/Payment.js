@@ -7,6 +7,7 @@ import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import CurrencyFormat from "react-currency-format";
 import { getBasketTotal } from "./reducer";
 import axios from "./axios.js";
+import { db } from "./firebase";
 
 function Payment() {
   const [{ basket, user }, dispatch] = useStateValue();
@@ -49,9 +50,22 @@ function Payment() {
       .then(({ paymentIntent }) => {
         //paymentIntent = payment configuration
 
+        db.collection("users")
+          .doc(user?.uid)
+          .collection("orders")
+          .doc(paymentIntent.id)
+          .set({
+            basket: basket,
+            amount: paymentIntent.amount,
+            created: paymentIntent.created,
+          });
+
         setSucceeded(true);
         setError(null);
         setProcessing(false);
+        dispatch({
+          type: "EMPTY_BASKET",
+        });
 
         history.replace("./orders");
       });
@@ -82,9 +96,9 @@ function Payment() {
               Hi ,{user?.email.replace(/@.*$/, "")}
             </h4>
             <h5>{user?.email}</h5>
-            <small>{user?.email}</small>
-            <p>119 Nehru Nagar</p>
-            <p>Erode India</p>
+
+            <p>Chennai - 600028</p>
+            <p> India</p>
           </div>
         </div>
 
@@ -144,8 +158,11 @@ function Payment() {
                   thousandSeparator={true}
                   prefix={"₹ "}
                 />
-                <button disabled={processing || disabled || succeeded}>
+                {/* <button disabled={processing || disabled || succeeded}>
                   <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
+                </button> */}
+                <button disabled={processing || disabled || succeeded}>
+                  <span>{processing ? <p>Under Construction (Backend Not Hoisted)</p> : "Buy Now"}</span>
                 </button>
               </div>
               {error && <div>{error}</div>}
