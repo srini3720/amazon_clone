@@ -40,7 +40,7 @@ function Home() {
         <Product
           id="54666555"
           title="iPhone 11"
-          price={51999}
+          price={51998}
           image="https://images-na.ssl-images-amazon.com/images/I/71i2XhHU3pL._SX679_.jpg"
           rating={5}
         />
