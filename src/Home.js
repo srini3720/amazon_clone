@@ -17,14 +17,14 @@ function Home() {
         <Product
           id="516946316"
           title="The World For Sale"
-          price={5999}
+          price={599}
           image="https://images-na.ssl-images-amazon.com/images/I/51AbgTr0pLL._SX327_BO1,204,203,200_.jpg"
           rating={4}
         />
         <Product
           id="51694526"
-          title="The Harry Potter "
-          price={2999}
+          title="Harry Potter "
+          price={299}
           image="https://images-na.ssl-images-amazon.com/images/I/51ifu1aebKL._SX332_BO1,204,203,200_.jpg"
           rating={4}
         />
