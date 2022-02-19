@@ -17,14 +17,14 @@ function Home() {
         <Product
           id="516946316"
           title="The World For Sale"
-          price={599}
+          price={5999}
           image="https://images-na.ssl-images-amazon.com/images/I/51AbgTr0pLL._SX327_BO1,204,203,200_.jpg"
           rating={4}
         />
         <Product
           id="51694526"
           title="The Harry Potter "
-          price={299}
+          price={2999}
           image="https://images-na.ssl-images-amazon.com/images/I/51ifu1aebKL._SX332_BO1,204,203,200_.jpg"
           rating={4}
         />
@@ -40,7 +40,7 @@ function Home() {
         <Product
           id="54666555"
           title="iPhone 11"
-          price={59999}
+          price={500000}
           image="https://images-na.ssl-images-amazon.com/images/I/71i2XhHU3pL._SX679_.jpg"
           rating={5}
         />
